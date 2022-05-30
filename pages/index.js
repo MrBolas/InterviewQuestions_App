@@ -23,7 +23,7 @@ export default function Home() {
   },[showAnswer])
 
   const getNewQuestion = useCallback(async () => {
-    fetch('http://localhost:8080/questions')
+    fetch(`http://${process.env.IQUESTIONS_API_URL}/questions`)
       .then((rsp) => rsp.json())
       .then((data) => {
         setShowAnswer(false)
